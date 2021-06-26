@@ -1,18 +1,70 @@
 ---
-title: "R Notebook"
+title: "Laboratorio 1 - R"
 output: html_notebook
 ---
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+*Estudiante: Luis Antonio Gutiérrez Rodas*
 
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+**Se cuentan con registros de las notas de 5 estudiantes**
+
+Descripción: Los primeros cuatro registros numéricos corresponden a una nota específica y el quinto registro determina si el estudiante es mayor de edad (mayor de edad = TRUE)
+
+**Vectores y matrices**
+**1.1**
 
 ```{r}
-plot(cars)
+student_1 <- c(50.4,62.3,92.1,77.6, TRUE)
+student_2 <- c(41.7,87.9,75.3,72.4,FALSE)
+student_3 <- c(30.3,67.8,69.3,71.2,FALSE)
+student_4 <- c(65.4,85.1,92.3,96.8,TRUE)
+student_5 <- c(70.4,88.2,95.2,90.7,TRUE)
+
+```
+**1.2**
+```{r}
+students_vector <- c(student_1,student_2,student_3,student_4,student_5)
+
+```
+**1.3**
+```{r}
+students_matrix <- matrix(students_vector, nrow = 5, byrow = TRUE)
+students_matrix
+```
+**Nombrado de una matriz**
+**2.1**
+```{r}
+name_students <- c("Lily Brown","Davis Moore","Susan Taylor","Mike Jones","Tom Hill")
+name_students
+
+name_courses_legal_age <- c("TIC","Accounting","Psychology","Ethics","Legal_age")
+name_courses_legal_age
+
+```
+**2.2**
+```{r}
+colnames(students_matrix) <- name_courses_legal_age
+rownames(students_matrix) <- name_students
+students_matrix
+```
+**rowSums, cbind**
+**3.1**
+```{r}
+total_grade_student <- rowSums(students_matrix[,1:4])
+total_grade_student
+
+```
+**3.2**
+```{r}
+result_students <- cbind(students_matrix,total_grade_student)
+result_students
+
+```
+**Seleccionando elementos de una matriz**
+**4.1**
+```{r}
+
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
