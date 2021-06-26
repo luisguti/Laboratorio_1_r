@@ -74,6 +74,11 @@ student_grades_df
 
 subset(student_grades_df, subset = Accounting > 80)
 ```
+**5.2**
+```{r}
+subset(student_grades_df, subset = Accounting > 80 & Legal_age == TRUE)
+```
+
 **Funciones, Condicionales y Bucles**
 **6.1**
 ```{r}
